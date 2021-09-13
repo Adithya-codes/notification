@@ -14,15 +14,15 @@ const Notification = () => {
     dispatch(removeNotification(id));
   };
 
-  data.map((val, idx) => {
-    setTimeout(() => {
+  data.map((val, idx) =>  {
+    return setTimeout(() => {
       dispatch(removeNotification(val.id));
     }, val.timeout);
   });
 
   return (
     
-    <div style={{display:'flex' ,justifyContent:'center',alignItems:'center'}}>
+    <div style={{display:'flex' ,flexDirection:'column' ,justifyContent:'center',alignItems:'center'}}>
       {data
         ? data.map((alert, idx) => (
             <Alert
